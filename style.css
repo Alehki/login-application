@@ -1,0 +1,285 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-size: 1rem;
+    user-select: none;
+    min-height: 100vh;
+}
+
+.form{
+    width: 300px;
+    background-color: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: .5em 1em;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    /* 10vh de mas por el content superior */
+    margin-top: 25vh;
+    
+    transition: transform 1s;
+}
+
+.form--display-none{
+    display: none;
+}
+
+.form__title{
+    font-size: 2.5rem;
+    font-family: monospace;
+    margin-bottom: 20px;
+}
+
+.form__input{
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid black;
+    margin-bottom: 40px;
+    padding-bottom: .5em;
+}
+
+.form__input:focus{
+    outline: none;
+    border-bottom: 1px solid #0086d4;
+}
+
+.form-btn{
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #0086d4;
+    color: #0086d4;
+    padding: 2% 5%;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.form-btn:active{
+    border: 1px solid #bd4a50;
+    color: #bd4a50;
+}
+
+.form-link--active{
+    transform: translateX(250%);
+}
+
+/* FORMS -------------------------------------------- */
+
+.forms{
+    padding-bottom: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* Click al botón register */
+
+
+
+/* Form register */
+
+.form-register{
+    width: 300px;
+    padding: .5em 1em;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 15vh;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: white;
+    transition: transform 1s;
+}
+
+.click-volver{
+    transform: translateX(-200%);
+}
+
+.form-register__input{
+    display: inline-block;
+    padding: .5em 1em;
+    width: 90%;
+    border: none;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #0086d4;
+}
+
+.form-register__input:focus{
+    outline: none;
+}
+
+.form-register--display-block{
+    display: block;
+}
+
+.fa-angle-double-left{
+    display: none;
+}
+
+.form-register--display-block > .fa-angle-double-left{
+    font-size: 3rem;
+    display: block;
+}
+
+/* cards------------------------------------ */
+
+.cards-content{
+    padding: .5em 2em;
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: #dcdcdc;
+
+    transition: 1s;
+}
+
+.cards-content--display-none{
+    display: none;
+}
+
+.cards-content-desplegue{
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.icon-menu{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.icon-menu__bar{
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    position: absolute;
+    top: 18px;
+    left: 5px;
+}
+
+.icon-menu__bar::before,
+.icon-menu__bar::after{
+    content: "";
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    position: absolute;
+}
+
+.icon-menu__bar::before{
+    top: 9px;
+}
+
+.icon-menu__bar::after{
+    bottom: 9px;
+}
+
+
+.cards-content__title{
+    font-family: cursive;
+    text-align: center;
+}
+
+.card{
+    display: inline-block;
+    width: 100px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    background-color: white;
+    vertical-align: top;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+
+    transition: transform .5s;
+}
+
+.card__img{
+    width: 100%;
+}
+
+.card__title{
+    font-size: 1rem;
+}
+
+.card__description{
+    display: none;
+}
+
+.card{
+    display: none;
+}
+
+.card--inline{
+    display: inline-block;
+}
+
+@media screen and (min-width: 625px) {
+
+    .cards-content{
+        border-bottom: none;
+    }
+
+    .form-register{
+        width: 600px;
+    }
+}
+
+@media screen and (min-width: 976px) {
+    .form{
+        transition: transform 1s;
+        transform: translateX(100%);
+    }
+    /* Hasta acá igual que en movile solo que con la transición */
+
+
+    .cards-content{
+        width: 60%;
+        height: 100vh;
+        /* background-color: blueviolet; */
+        background-color: transparent;
+    }
+
+    /* .cards-content--active{
+        display: none;
+    } */
+
+    .cards-content--display-none{
+        display: none;
+    }
+
+    .icon-menu{
+        display: none;
+    }
+
+    .card{
+        display: inline-block;
+        /* transition: transform .5s; */
+    }
+
+    @media (hover: hover) {
+        .card:hover{
+            transform: rotate(10deg);
+        }
+    }   
+
+    .form-link--active{
+        transform: translateX(250%);
+    }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/a40ecaeca8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idea-morena</title>
+</head>
+<body>
+    <header class="header">
+        <!-- <input type="file" id="file"> -->
+    </header>
+
+    <main class="main" id="main">
+        <section class="forms">
+            <form class="form" id="form">
+                <h2 class="form__title">Bienvenido</h2>
+                <input class="form__input" type="text"  id="name" placeholder="Nombre de cuenta">
+                <input class="form__input" type="password" id="pass" placeholder="Contraseña">
+                <button class="form-btn" id="form-btn">Ingresar</button>
+                <p class="text">¿Aún no tienes cuenta?</p>
+                <a href="#" class="form-link" id="form-link">Registrarse</a>
+            </form>
+            
+            <form class="form-register click-volver" id="form-register">
+                <h2 class="form-register__title">Complete para registrarse</h2>
+                <input class="form-register__input" type="file" id="form-register__input--file" placeholder="asdasd">
+                <input class="form-register__input" type="text" id="form-register__input--nameavatar" placeholder="Nombre de Avatar">
+                <input class="form-register__input" type="text" id="form-register__input--namecuenta" placeholder="Nombre de cuenta">
+                <input class="form-register__input" type="password" id="form-register__input--pass" placeholder="Contraseña">
+                <input class="form-register__input" type="password" id="form-register__input--repitpass" placeholder="Repetir contraseña">
+                <button class="form-btn" id="form-register-btn">Confirmar datos</button>
+                <!-- <i class="fas fa-angle-double-left" id="closed-register"></i> -->
+                <a href="#" id="closed-register">Volver</a>
+            </form>
+
+        </section>
+
+        <article class="cards-content" id="cards-content">
+            <div class="icon-menu" id="icon-menu">
+                <div class="icon-menu__bar"></div>
+            </div>
+            <h2 class="cards-content__title">Avatares ya registradas</h2>
+
+            <!-- <div class="card">
+                <img class="card__img" src="assets/images/personas-random/alexander.jpg" alt="mujer">
+                <div class="card__body">
+                    <h2 class="card__title">Michel</h2>
+                    <p class="card__description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia iste in nesciunt dolore, esse ipsa odio tempora minima</p>
+                </div>
+            </div> -->
+
+        </article>
+        <!-- <button id="tia" style="position: relative;">Clear</button> -->
+    </main>
+
+    <script src="js.js"></script>
+    <!-- <script src="users-js.js"></script> -->
+</body>
+</html>
