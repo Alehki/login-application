@@ -1,0 +1,150 @@
+/* 
+#222D6D
+#18A4E1
+#F4F1EA
+#F8B4C1
+
+*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    color: rgba(0, 0, 0, .8);
+    background-color: #f4f1EA;
+    font-family: monospace;
+    min-height: 100vh;
+    position: relative;
+    z-index: -10;
+}
+
+.header{
+    background-color: black;
+    position: relative;
+    z-index: -10;
+    padding-top: 10px;
+    color: white;
+}
+
+
+
+/* ICONO DE MENÚ */
+
+.menu-icon{
+    position: absolute;
+    z-index: -4;
+    width: 30px;
+    height: 30px;
+    left: 10px;
+    padding-left: 5px;
+}
+
+.menu-icon__bar{
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background-color: white;
+    border-radius: 5px;
+    top: 14px;
+}
+
+.menu-icon::before,
+.menu-icon::after{
+    content: "";
+    position: absolute; 
+    width: 20px;
+    height: 2px;
+    /* background-color: black;*/
+    background-color: white;
+}
+
+.menu-icon::before{
+    top: 8px;
+}
+
+.menu-icon::after{
+    bottom: 8px;
+}
+
+/* Lista al desplegarse */
+
+.menu{
+    display: none;
+    margin-top: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    position: fixed;
+    z-index: -5;
+    top: 0;
+    left: 0;
+}
+
+.menu-active{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.menu__item{
+    margin-bottom: 1.5em;
+}
+
+.menu__link{
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Tarjeta de perfil */
+
+.perfil{
+    width: 200px;
+    background-color: black;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position: relative;
+    z-index: -10;
+}
+
+.perfil__img{
+    width: 80%;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: white;
+}
+
+.perfil__body{
+    width: 100%;
+    padding: .5em 1em;
+}
+
+.name,
+.location{
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.name{
+    font-size: 1.3rem;
+}
+
+.location{
+    font-size: .9rem;
+}
+
+/* Main */
+
+.main{
+    position: relative;
+    z-index: -10;
+}

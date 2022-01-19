@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/a40ecaeca8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css-principal/style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idea-morena</title>
+    <title>Iniciar sesión</title>
 </head>
 <body>
-    <header class="header">
-        <!-- <input type="file" id="file"> -->
-    </header>
 
     <main class="main" id="main">
         <section class="forms">
@@ -24,6 +21,13 @@
                 <a href="#" class="form-link" id="form-link">Registrarse</a>
             </form>
             
+            <p class="ruler-register" id="ruler-register">Reglas de registro</p>
+            <div class="ruler-register-open" id="ruler-register-open">
+                <p><span>Nombre de avatar:</span> Podes usar mayusculas, minusculas numeros, signos bajos y altos. Son de 3 a 10 digitos.</p>
+                <p><span>Nombre de cuenta:</span> Podes usar mayusculas, minusculas numeros, signos bajos y altos. Son de 3 a 20 digitos.</p>
+                <p><span>Contraseña:</span> Podes usar mayusculas, minusculas numeros, signos bajos y altos. Son de 8 a infinitos digitos.</p>
+            </div>
+
             <form class="form-register click-volver" id="form-register">
                 <h2 class="form-register__title">Complete para registrarse</h2>
                 <input class="form-register__input" type="file" id="form-register__input--file" placeholder="asdasd">
@@ -32,8 +36,8 @@
                 <input class="form-register__input" type="password" id="form-register__input--pass" placeholder="Contraseña">
                 <input class="form-register__input" type="password" id="form-register__input--repitpass" placeholder="Repetir contraseña">
                 <button class="form-btn" id="form-register-btn">Confirmar datos</button>
-                <!-- <i class="fas fa-angle-double-left" id="closed-register"></i> -->
-                <a href="#" id="closed-register">Volver</a>
+                <i class="fas fa-angle-double-left" id="closed-register"> Volver</i>
+                <!-- <a href="#" id="closed-register">Volver</a> -->
             </form>
 
         </section>
@@ -42,7 +46,7 @@
             <div class="icon-menu" id="icon-menu">
                 <div class="icon-menu__bar"></div>
             </div>
-            <h2 class="cards-content__title">Avatares ya registradas</h2>
+            <h2 class="cards-content__title">Avatares ya registrados</h2>
 
             <!-- <div class="card">
                 <img class="card__img" src="assets/images/personas-random/alexander.jpg" alt="mujer">
@@ -53,10 +57,17 @@
             </div> -->
 
         </article>
-        <!-- <button id="tia" style="position: relative;">Clear</button> -->
+        <button class="emergency-btn" id="emergency-btn">Emergency</button>
+        <section class="emergency" id="emergency">
+            <form class="form-emergency">
+                <div class="emergency-closed" id="emergency-closed"></div>
+                <h2 class="form-emergency__title">Borrar todos los usuarios registrados</h2>
+                <input class="form-emergency__input" id="form-emergency__input" type="password" placeholder="Contraseña de eliminación">
+                <button class="emergency-closed-btn" id="emergency-closed-btn">Eliminar todo</button>
+            </form>
+        </section>
     </main>
-
-    <script src="js.js"></script>
-    <!-- <script src="users-js.js"></script> -->
+    <script src="js-principal/functions.js"></script>
+    <script src="js-principal/js.js"></script>
 </body>
 </html>

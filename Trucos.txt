@@ -1,0 +1,7 @@
+Trucos o tips que vas viendo.
+
+1) Si queremos modificar un valor del localStorage debemos, agarrar ese objeto, modificar 
+ese valor y luego meterlo en el localStorage nuevamente con esa key que ya tenia. Esto
+lo que hará es reemplazar el que tenias por el nuevo objeto, que es básicamente el mismo
+con el cambio/s hecho/s. SI NO LO HACES ASI NO SE MODIFICA. Recordá que al meter en el 
+localStorage objetos/datos con una key que ya existe lo reemplaza.

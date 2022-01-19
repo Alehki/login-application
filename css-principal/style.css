@@ -1,12 +1,13 @@
-*{
+*, *::before, *::after{
     box-sizing: border-box;
 }
 
 body{
     margin: 0;
-    font-size: 1rem;
+    font-size: .9rem;
     user-select: none;
     min-height: 100vh;
+    user-select: none;
 }
 
 .form{
@@ -19,8 +20,8 @@ body{
     margin-right: auto;
     text-align: center;
 
-    /* 10vh de mas por el content superior */
-    margin-top: 25vh;
+    /* 5vh de mas por el content superior */
+    margin-top: 20vh;
     
     transition: transform 1s;
 }
@@ -63,6 +64,11 @@ body{
     color: #bd4a50;
 }
 
+.form-link{
+    display: block;
+    padding-bottom: 1em;
+}
+
 .form-link--active{
     transform: translateX(250%);
 }
@@ -82,13 +88,64 @@ body{
 
 /* Form register */
 
+.ruler-register{
+    width: 150px;
+    text-align: center;
+    background-color: transparent;
+    padding: .5em;
+    border: 1px solid orange;
+    font-family: monospace;
+    font-size: .8rem;
+    color: orange;
+    position: relative;
+    top: 10px;
+    left: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.ruler-register{
+    display: none;
+}
+
+.ruler-register--active{
+    display: block;
+}
+
+.ruler-register-open{
+    display: none;
+}
+
+.ruler-register-open--active{
+    display: block;
+}
+
+.ruler-register-open{
+    background-color: rgb(49, 110, 175);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    padding-top: 20%;
+    font-family: monospace;
+    font-size: .8rem;
+}
+
+.ruler-register-open > p > span{
+    font-size: 1rem;
+    color: white;
+}
+
 .form-register{
     width: 300px;
     padding: .5em 1em;
     text-align: center;
     border-radius: 20px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 15vh;
+    margin-top: 5vh;
     display: none;
     margin-left: auto;
     margin-right: auto;
@@ -110,6 +167,10 @@ body{
     border-bottom: 1px solid #0086d4;
 }
 
+.form-register__input--valid{
+    border-bottom: 2px solid #00d483;
+}
+
 .form-register__input:focus{
     outline: none;
 }
@@ -123,9 +184,13 @@ body{
 }
 
 .form-register--display-block > .fa-angle-double-left{
-    font-size: 3rem;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    /* font-size: 1.5rem; */
     display: block;
 }
+
+
 
 /* cards------------------------------------ */
 
@@ -136,9 +201,8 @@ body{
     position: absolute;
     top: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    background-color: #dcdcdc;
 
-    transition: 1s;
+    /* transition: 1s; */
 }
 
 .cards-content--display-none{
@@ -149,6 +213,7 @@ body{
     position: absolute;
     width: 100%;
     min-height: 100vh;
+    background-color: #dcdcdc;
 }
 
 .icon-menu{
@@ -190,14 +255,14 @@ body{
 
 
 .cards-content__title{
-    font-family: cursive;
+    font-family: monospace;
     text-align: center;
 }
 
 .card{
     display: inline-block;
     width: 100px;
-    height: 150px;
+    min-height: 150px;
     border-radius: 10px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -230,11 +295,137 @@ body{
     display: inline-block;
 }
 
-@media screen and (min-width: 625px) {
+/* EMERGENCY */
 
-    .cards-content{
-        border-bottom: none;
-    }
+.emergency{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 100vh;
+
+    display: none;
+}
+
+.emergency--active{
+    display: block;
+}
+
+.form-emergency{
+    width: 300px;
+    padding: 2em 1em;
+    border-radius: 20px;
+    background-color: rgb(0, 227, 252);
+    background-color: rgb(49, 110, 175);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 15vh;
+
+    position: relative;
+}
+
+.emergency-closed{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.emergency-closed::before,
+.emergency-closed::after{
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 2px;
+    background-color: black;
+    left: 3px;
+    top: 8px;
+}
+
+.emergency-closed::before{
+    transform: rotate(-45deg);
+}
+
+.emergency-closed::after{
+    transform: rotate(45deg);
+}
+
+
+.form-emergency__title{
+    margin: 0;
+    font-family: sans-serif;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.form-emergency__input{
+    width: 100%;
+    padding: .5em;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+.form-emergency__input::placeholder{
+    color: rgba(255, 255, 255, 0.8);
+    /* color: black; */
+}
+
+.form-emergency__input:focus{
+    outline: none;
+}
+
+.emergency-closed-btn{
+    background-color: transparent;
+    border: 1px solid  #76a5c0;
+    color: #76a5c0;
+    padding: .5em 2em;
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.emergency-closed-btn:active{
+    color: red;
+    border: 1px solid red;
+}
+
+.emergency-closed-btn:focus{
+    outline: none;
+}
+
+.emergency-btn{
+    font-size: .7rem;
+    padding: .5em;
+    background-color: transparent;
+    border-radius: 10px;
+    color: red;
+    border: 1px solid red;
+    cursor: pointer;
+    position: absolute;
+
+    top: 13vh;
+    right: 2vw;
+}
+
+.emergency-btn--display-none{
+    display: none;
+}
+
+.emergency-btn:focus{
+    outline: none;
+}
+
+
+@media screen and (min-width: 625px) {
 
     .form-register{
         width: 600px;
@@ -254,6 +445,7 @@ body{
         height: 100vh;
         /* background-color: blueviolet; */
         background-color: transparent;
+        border-bottom: none;
     }
 
     /* .cards-content--active{
@@ -283,3 +475,5 @@ body{
         transform: translateX(250%);
     }
 }
+
+

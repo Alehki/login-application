@@ -1,0 +1,8 @@
+Posibles problemas detectados.
+
+1) La aplicación al hacer no sabes que, se coloca aveces en verde ambos inputs de la
+validación de contraseña del registro.
+
+2) Puede ocurrir que si la Web/computadora está lenta, si agregas todos los datos
+y la imagen la elegis a lo último y apretas el boton de registro, puede que la imagen
+no se cargue.
