@@ -108,68 +108,66 @@ form_register__input__file.addEventListener(`change`, ()=>{
     valid.file = true
 })
 
-form_register__input__name_avatar.addEventListener(`keyup`, ()=>{
-    // if(form_register__input__name_avatar.value.length >=3) valid.name = true
-    const valor = regEx_name_avatar.test(form_register__input__name_avatar.value)
+form_register__input__name_avatar.addEventListener(`keyup`, (e)=>{
+
+    const valor = regEx_name_avatar.test(e.target.value)
     if(valor){
-        form_register__input__name_avatar.classList.add(`form-register__input--valid`)
+        e.target.classList.add(`form-register__input--valid`)
         valid.name_avatar = true
     }else{
-        form_register__input__name_avatar.classList.remove(`form-register__input--valid`)
+        e.target.classList.remove(`form-register__input--valid`)
         valid.name_avatar = false
     }
 })
 
-form_register__input__name_cuenta.addEventListener(`keyup`, ()=>{
-    // if(form_register__input__name_cuenta.value.length >=3) valid.description = true
-    const valor = regEx_name_cuenta.test(form_register__input__name_cuenta.value)
+form_register__input__name_cuenta.addEventListener(`keyup`, (e)=>{
+    const valor = regEx_name_cuenta.test(e.target.value)
     if(valor){
-        form_register__input__name_cuenta.classList.add(`form-register__input--valid`)
+        e.target.classList.add(`form-register__input--valid`)
         valid.name_cuenta = true
     }else{
-        form_register__input__name_cuenta.classList.remove(`form-register__input--valid`)
+        e.target.classList.remove(`form-register__input--valid`)
         valid.name_cuenta = false
     }
 })
 
-form_register__input__pass.addEventListener(`keyup`, ()=>{
-    // if(form_register__input__pass.value.length >=8) pass.pass1 = form_register__input__pass.value
+form_register__input__pass.addEventListener(`keyup`, (e)=>{
     
-    const valor = regEx_name_pass.test(form_register__input__pass.value)
+    const valor = regEx_name_pass.test(e.target.value)
     if(valor){
-        pass.pass1 = form_register__input__pass.value
+        pass.pass1 = e.target.value
         if(pass.pass1 === pass.pass2){
-            form_register__input__pass.classList.add(`form-register__input--valid`)
+            e.target.classList.add(`form-register__input--valid`)
             form_register__input__repitpass.classList.add(`form-register__input--valid`)
         }  
         else{
-            form_register__input__pass.classList.remove(`form-register__input--valid`)
+            e.target.classList.remove(`form-register__input--valid`)
             form_register__input__repitpass.classList.remove(`form-register__input--valid`)
         } 
     }else{
-        form_register__input__pass.classList.remove(`form-register__input--valid`)
+        e.target.classList.remove(`form-register__input--valid`)
         form_register__input__repitpass.classList.remove(`form-register__input--valid`)
     }
 })
 
-form_register__input__repitpass.addEventListener(`keyup`, ()=>{
+form_register__input__repitpass.addEventListener(`keyup`, (e)=>{
     // if(form_register__input__repitpass.value.length >=8) pass.pass2 = form_register__input__repitpass.value
 
-    const valor = regEx_name_pass.test(form_register__input__repitpass.value)
+    const valor = regEx_name_pass.test(e.target.value)
 
     if(valor){
-        pass.pass2 = form_register__input__repitpass.value
+        pass.pass2 = e.target.value
         if(pass.pass1 === pass.pass2){
             form_register__input__pass.classList.add(`form-register__input--valid`)
-            form_register__input__repitpass.classList.add(`form-register__input--valid`)
+            e.target.classList.add(`form-register__input--valid`)
         }  
         else{
             form_register__input__pass.classList.remove(`form-register__input--valid`)
-            form_register__input__repitpass.classList.remove(`form-register__input--valid`)
+            e.target.classList.remove(`form-register__input--valid`)
         }   
     }else{
         form_register__input__pass.classList.remove(`form-register__input--valid`)
-        form_register__input__repitpass.classList.remove(`form-register__input--valid`)
+        e.target.classList.remove(`form-register__input--valid`)
     }
 })
 
@@ -178,22 +176,26 @@ form_register__input__repitpass.addEventListener(`keyup`, ()=>{
 
 form_register_btn.addEventListener(`click`, (e)=>{
     e.preventDefault()
-    let valor = 0;
     if(pass.pass1 === pass.pass2) valid.pass = true
     console.log(valid)
-    for(const key in valid){
-        if(valid[key] === false){
-            console.log("No se completo correctamente");
-            break
-        }else valor+= 1
-    if(valor === 4){
+    
+    // let valor = 0;
+    // for(const key in valid){
+    //     if(valid[key] === false){
+    //         console.log("No se completo correctamente");
+    //         break
+    // }else valor+= 1
+
+    const values = Object.values(valid)
+    const isValid = values.findIndex(element => element == false)
+
+        
+    if(isValid == -1){
         console.log("Datos completados correctamente")
-        console.log(form_register__input__name_cuenta.value)
 
         const reader = new FileReader()
-        reader.readAsDataURL(form_register__input__file.files[0])
 
-        setTimeout(() => {
+        reader.addEventListener(`load`, ()=>{
             const random = Math.floor(Math.random()*100)
             const person = {
                 id: random,
@@ -225,14 +227,12 @@ form_register_btn.addEventListener(`click`, (e)=>{
                 funRemove()
                 ruler_register.classList.remove(`ruler-register--active`)
             }, 800);
-
-        }, 100);
-
-        
+        })
+        reader.readAsDataURL(form_register__input__file.files[0])        
 
         // primero hace esto, luego el evento a pesar de que el evento este antes. Es por eso, para escuchar 
         // cuando cargue la img
-        } 
+        
     }
 })
 

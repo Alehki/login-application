@@ -412,7 +412,7 @@ body{
     cursor: pointer;
     position: absolute;
 
-    top: 13vh;
+    top: 14vh;
     right: 2vw;
 }
 
@@ -465,11 +465,11 @@ body{
         /* transition: transform .5s; */
     }
 
-    @media (hover: hover) {
+    /* @media (hover: hover) {
         .card:hover{
             transform: rotate(10deg);
         }
-    }   
+    }    */
 
     .form-link--active{
         transform: translateX(250%);

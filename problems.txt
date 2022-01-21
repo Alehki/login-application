@@ -3,6 +3,16 @@ Posibles problemas detectados.
 1) La aplicación al hacer no sabes que, se coloca aveces en verde ambos inputs de la
 validación de contraseña del registro.
 
+Nota: El problema este en la lógica de agregar y sacar las clases que hacen que los
+input pass se coloquen verdes. Pues a pesar de que se ponga verde cuando no coiciden 
+(el error). Pensaste que podia ser por que el pass en el valor es FALSO, pero no. pues
+este se valida luego de apretar el boton ya sea true o false.
+
 2) Puede ocurrir que si la Web/computadora está lenta, si agregas todos los datos
 y la imagen la elegis a lo último y apretas el boton de registro, puede que la imagen
-no se cargue.
+no se cargue. 
+
+Solucionado: En teoria no debe pasar más, lo que hiciste fue escuchar al reader (variable
+que guarda el objeto Filereader()) con un evento load, es decir, creas el objeto, creas el
+evento, y metesel file. Cuando efectivamente se cargue el file (la imagen) se ejecuta el 
+evento y todo lo que hat dentro.

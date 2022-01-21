@@ -5,3 +5,13 @@ ese valor y luego meterlo en el localStorage nuevamente con esa key que ya tenia
 lo que hará es reemplazar el que tenias por el nuevo objeto, que es básicamente el mismo
 con el cambio/s hecho/s. SI NO LO HACES ASI NO SE MODIFICA. Recordá que al meter en el 
 localStorage objetos/datos con una key que ya existe lo reemplaza.
+
+2) Recordar que al escuchar un evento podes seleccionar el objeto a modificar con
+e.target; pues ESTO SI EL EVENTO ES SOBRE ESTE OBJETO, el target es una variable que
+representa el elemento donde se ejecuta el evento.
+
+3) Object tiene dos métodos importantes: .keys() y .values(); estos sirven para que
+al pasarle un objeto nos devuelva un array. Si lo hacemos con keys() entonces nos da
+las claves, si lo hacemos con values() nos da los valores. Esto es importante, es decir,
+no es sólo para el localStorage sino que si tenemos que validar un array (todos los 
+valores en true por ejemplo) al usar esto es más sencillo evaluar los valores.
