@@ -16,7 +16,7 @@ for(const key of keys){
         cerar_sesion.addEventListener(`click`, ()=>{
             objeto.status = false
             localStorage.setItem(objeto.id, JSON.stringify(objeto))
-            location = "/"
+            location.href = "../"
         })
     } 
 }

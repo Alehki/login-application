@@ -283,7 +283,8 @@ form_btn.addEventListener(`click`, (e)=>{
 
     if(valid_sesion.name && valid_sesion.pass){
         console.log(`El usuario es correcto`)
-        location.href = "../html-user/user.html"
+        // location.href = "../html-user/user.html"
+        location.href = "../login-application/html-user/user.html"
     } 
     else console.log(`Este usuario no está registrado`)
 })
@@ -312,6 +313,7 @@ emergency_closed_btn.addEventListener(`click`, (e)=>{
     e.preventDefault()
     if(form_emergency__input.value === "alehki1234") {
         localStorage.clear()
-        location.href = "/"
+        // location.href = "/"
+        location.href = "../login-application/"
     }
 })
